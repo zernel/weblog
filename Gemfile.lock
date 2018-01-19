@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/zernel/blogine.git
-  revision: fcb59239bff24cd5764aca7a7b7eadc0e2463b53
+  revision: a51ed8484bcc3d066120a67c1f37ad79ff67cd37
   branch: develop
   specs:
     blogine (0.1.0)
@@ -57,9 +57,9 @@ GEM
     autoprefixer-rails (7.2.5)
       execjs
     bindex (0.5.0)
-    bootstrap (4.0.0.beta3)
+    bootstrap (4.0.0)
       autoprefixer-rails (>= 6.0.3)
-      popper_js (>= 1.12.3, < 2)
+      popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
     builder (3.2.3)
     byebug (9.1.0)
