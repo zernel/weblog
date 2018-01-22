@@ -15,6 +15,19 @@ port        ENV.fetch("PORT") { 3000 }
 #
 environment ENV.fetch("RAILS_ENV") { "development" }
 
+if get(:environment) == 'production'
+  app_path = '/home/deploy/weblog/'
+  bind  "unix://#{app_path}/tmp/sockets/puma.sock"
+  pidfile "#{app_path}/tmp/pids/puma.pid"
+  state_path "#{path_to_your_app}/tmp/sockets/puma.state"
+  directory "#{app_path}"
+
+  daemonize true
+
+  activate_control_app 'unix://#{app_path}/tmp/sockets/pumactl.sock'
+  prune_bundler
+end
+
 # Specifies the number of `workers` to boot in clustered mode.
 # Workers are forked webserver processes. If using threads and workers together
 # the concurrency of the application would be max `threads` * `workers`.
